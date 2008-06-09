@@ -20,6 +20,7 @@ class RollsController < ApplicationController
     if @roll.save
       @roll.snip_url = Net::HTTP.get_response('snipr.com', "/site/snip?r=simple&link=http://rickroll.tv/rolls/show/#{@roll.id}").body
       @roll.save
+      # redirect_to :action => :preview, :id => @roll.id
       render :action => :preview
     else
       render :action => :new
