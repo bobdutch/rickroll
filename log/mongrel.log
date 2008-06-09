@@ -1,0 +1,34 @@
+** Daemonized, any open files are closed.  Look at log/mongrel.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:12038
+** Starting Rails with production environment...
+/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require': no such file to load -- haml (MissingSourceFile)
+	from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+	from /home/hombowor/rails/rickroller/vendor/plugins/haml/init.rb:1:in `evaluate_init_rb'
+	from /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/rails/plugin.rb:79:in `evaluate_init_rb'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+	from /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/rails/plugin.rb:75:in `evaluate_init_rb'
+	 ... 20 levels...
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+	from /usr/bin/mongrel_rails:19:in `load'
+	from /usr/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at log/mongrel.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:12038
+** Starting Rails with production environment...
+/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require': no such file to load -- haml (MissingSourceFile)
+	from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+	from /home/hombowor/rails/rickroller/vendor/plugins/haml/init.rb:1:in `evaluate_init_rb'
+	from /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/rails/plugin.rb:79:in `evaluate_init_rb'
+	from /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+	from /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/rails/plugin.rb:75:in `evaluate_init_rb'
+	 ... 20 levels...
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+	from /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+	from /usr/bin/mongrel_rails:19:in `load'
+	from /usr/bin/mongrel_rails:19

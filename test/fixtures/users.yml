@@ -1,0 +1,35 @@
+# == Schema Information
+# Schema version: 3
+#
+# Table name: users
+#
+#  id              :integer(11)     not null, primary key
+#  name            :string(255)     
+#  country         :string(255)     
+#  gender          :string(255)     
+#  number_of_rolls :integer(11)     
+#  age             :integer(11)     
+#  email           :string(255)     
+#  password        :string(255)     
+#  salt            :string(255)     
+#  created_at      :datetime        
+#  updated_at      :datetime        
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  country: MyString
+  number_of_rolls: 1
+  email: MyString
+  password: MyString
+  salt: MyString
+
+two:
+  name: MyString
+  country: MyString
+  number_of_rolls: 1
+  email: MyString
+  password: MyString
+  salt: MyString

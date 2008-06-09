@@ -1,0 +1,28 @@
+%h2
+  Here is your shortened url
+  = link_to @roll.snip_url, @roll.snip_url
+.destination
+  the destination is
+  = link_to @roll.destination_url, @roll.destination_url
+- if @roll.expired?
+  but this url is expired and all visitors will be redirected tp
+  = link_to @roll.roll_url, @roll.roll_url
+- else
+  but
+  .roll-options
+    - unless @roll.probability.nil?
+      =@roll.probability
+      \% of the time it will redirect the visitor to
+      = link_to @roll.roll_url, @roll.roll_url
+  -if @roll.expires_at || @roll.hits_until_expired
+    .permanent
+      the shortened url will permanent redirect to 
+      = link_to @roll.roll_url, @roll.roll_url
+      - if @roll.expires_at
+        on
+        = @roll.expires_at
+        - puts "or" if @roll.hits_until_expired
+      - if @roll.hits_until_expired
+        after
+        = @roll.hits_until_expired
+        more hits

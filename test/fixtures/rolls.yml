@@ -1,0 +1,25 @@
+# == Schema Information
+# Schema version: 3
+#
+# Table name: rolls
+#
+#  id                 :integer(11)     not null, primary key
+#  destination_url    :string(255)     
+#  snip_url           :string(255)     
+#  roll_url           :string(255)     
+#  probability        :integer(11)     
+#  hits_until_expired :integer(11)     
+#  user_id            :integer(11)     
+#  expires_at         :datetime        
+#  expired            :boolean(1)      
+#  created_at         :datetime        
+#  updated_at         :datetime        
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
