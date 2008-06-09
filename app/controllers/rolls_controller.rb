@@ -31,12 +31,6 @@ class RollsController < ApplicationController
     @roll = Roll.find params[:id]
     add_hit
 
-    if @roll.hits_until_expired
-      @roll.hits_until_expired -= 1
-      @roll.expired = true if @roll.hits_until_expired == 0
-      @roll.save
-    end
-
     if do_roll?
       if @roll.user
         @roll.user.number_of_rolls += 1
@@ -46,6 +40,12 @@ class RollsController < ApplicationController
       redirect_to @roll.roll_url
     else
       redirect_to @roll.destination_url
+    end
+
+    if @roll.hits_until_expired
+      @roll.hits_until_expired -= 1
+      @roll.expired = true if @roll.hits_until_expired == 0
+      @roll.save
     end
   end
 
