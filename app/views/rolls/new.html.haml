@@ -5,7 +5,7 @@
 - form_for :roll, :url => { :action => :create } do |form|
   = error_messages_for :roll
   .destination
-    %span Enter the url you wish to shorten here
+    %span Enter the url you wish to shorten here (e.g., http://www.example.com/)
     = form.text_field :destination_url
   .rolling
     %span you can make the shortened url sometimes roll to a different page

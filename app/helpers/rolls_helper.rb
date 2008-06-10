@@ -1,6 +1,6 @@
 module RollsHelper
   def expire_date_num_select
-    options = options_for_select(1..31)
+    options = options_for_select(1..60)
     select_tag 'expire_date_num', options
   end
 

@@ -1,27 +1,32 @@
 class RollsController < ApplicationController
   VALID_EXPIRE_DATE_PERIODS = %w{minutes hours days weeks months years}
+
   def new
     @roll = Roll.new
   end
 
   def create
-    require 'net/http'
+    @roll = Roll.new(params[:roll]) do |roll|
+      if params[:which_roll] == 'classic'
+        roll.roll_url = Roll::RICK_ROLL_URL
+      end
 
-    @roll = Roll.new(params[:roll])
-
-    if params[:which_roll] == 'classic'
-      @roll.roll_url = Roll::RICK_ROLL_URL
+      if params[:use_expiry_date] && (params[:expire_date_num].to_i > 0) && VALID_EXPIRE_DATE_PERIODS.include?(params[:expire_date_period])
+        roll.expires_at = params[:expire_date_num].to_i.send(params[:expire_date_period]).from_now
+      end
     end
+    
+    begin
+      @roll.save!
 
-    if params[:use_expiry_date] && (params[:expire_date_num].to_i > 0) && VALID_EXPIRE_DATE_PERIODS.include?(params[:expire_date_period])
-        @roll.expires_at = eval("#{params[:expire_date_num].to_i}.#{params[:expire_date_period]}.from_now")
-    end
+      @roll.snip_url = Net::HTTP.get_response('snipr.com', "/site/snip?r=simple&link=#{roll_url(@roll)}").body
+      @roll.save!
 
-    if @roll.save
-      @roll.snip_url = Net::HTTP.get_response('snipr.com', "/site/snip?r=simple&link=http://rickroll.tv/rolls/show/#{@roll.id}").body
-      @roll.save
       redirect_to :action => :preview, :id => @roll.id
-    else
+    rescue SocketError, Timeout::Error
+      flash[:notice] = "Due to a network error, we were unable to build a snipurl for your link."
+      render :action => :new
+    rescue ActiveRecord::RecordInvalid
       render :action => :new
     end
   end
