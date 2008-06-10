@@ -78,6 +78,8 @@ class RollsController < ApplicationController
   def add_hit
     return false if url_for(:action => :preview, :id => @roll.id) == request.referer
     @hit = Hit.find_or_create_by_roll_id_and_referrer(@roll.id, request.referer)
+    #TODO if request.referer is nil maybe we should record the IP address, (track bots and stuff)
+    # or maybe just reject
     @hit.count += 1
     @hit.save
   end
