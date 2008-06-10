@@ -33,10 +33,10 @@ class RollsController < ApplicationController
 
   def show
     @roll = Roll.find params[:id]
-    add_hit
+    hit_added = add_hit
 
     if do_roll?
-      if @roll.user
+      if @roll.user && hit_added
         @roll.user.number_of_rolls += 1
         @roll.user.save
       end
@@ -46,7 +46,7 @@ class RollsController < ApplicationController
       redirect_to @roll.destination_url
     end
 
-    if @roll.hits_until_expired
+    if @roll.hits_until_expired && hit_added
       @roll.hits_until_expired -= 1
       @roll.expired = true if @roll.hits_until_expired == 0
       @roll.save
@@ -76,6 +76,7 @@ class RollsController < ApplicationController
   end
 
   def add_hit
+    return false if url_for(:action => :preview, :id => @roll.id) == request.referer
     @hit = Hit.find_or_create_by_roll_id_and_referrer(@roll.id, request.referer)
     @hit.count += 1
     @hit.save
