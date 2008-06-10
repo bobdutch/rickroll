@@ -1,8 +1,12 @@
 !!!
 %html{ :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en-gb", :lang => "en" }
   %head
-    %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}    
     %title RickRoll.tv
+    = stylesheet_link_tag 'reset.css'
+    = stylesheet_link_tag 'text.css'
+    = stylesheet_link_tag 'screen.css'
   %body
-    = yield
+    #container  
+      = yield
     = render :partial => 'layouts/analytics'
