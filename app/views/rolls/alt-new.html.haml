@@ -1,0 +1,57 @@
+%h1 Welcome to RickRoll.tv
+%h2 the bait and switch URL shortening service
+- if flash[:notice]
+  #notice
+    = flash[:notice]
+- form_for :roll, :url => { :action => :create } do |form|
+  = error_messages_for :roll
+  %fieldset
+    %legend The Bait URL
+    = form.text_field :destination_url
+  %fieldset
+    %legend The Switch URL
+    %label
+      = radio_button_tag 'which_roll', 'classic', true
+      Classic Rick Roll
+      = link_to "(watch video)", Roll::RICK_ROLL_URL
+    %br/
+    %label
+      = radio_button_tag 'which_roll', 'custom'
+      Custom URL
+      = form.text_field :roll_url
+  %fieldset
+    %legend The Team
+    %label
+      = check_box_tag :fixme
+      The Bouncer - rickroll after a number of clickthroughs
+    %br/
+    %label
+      = check_box_tag :fixme
+      The Patient Fox  - rickroll after some time has elapsed
+    %br/
+    %label
+      = check_box_tag :fixme
+      The Confuser - rickroll only once every few visits
+    
+
+    %ul
+      %li
+        %label
+          Switch after 
+          = form.text_field :hits_until_expired, {:size => 4}
+          hits
+      %li
+        %label
+          Switch
+          = form.text_field :probability, { :size => 4 }
+          \% of the time
+      %li
+        %label
+          = check_box_tag 'use_expiry_date'
+          Switch
+          = expire_date_num_select
+          = expire_date_period_select
+          from now, 
+          %em forever
+
+  = submit_tag "Build me a rickroll!"
