@@ -1,0 +1,23 @@
+BUGS
+- radio button doesn't remember position (make helper)
+- bait url gets wiped out when validation fails
+
+FEATURES (approved)
+- add user signup/login
+- let users edit their rolls/check hits/ unexpire
+- record IP in hits if no referrer
+- add link text field
+- switch prod db to mysql
+- embed rickroll vid on hosted page
+- rick roll as error page
+- top rollers
+- top roll'd
+
+
+IDEAS
+- frame version
+- alternate roll urls if video is removed
+- switch url of the month/week
+- interstitial
+- ads
+- rick facts, 
