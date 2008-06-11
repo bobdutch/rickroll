@@ -9,14 +9,20 @@ FEATURES (approved)
 - add link text field
 - switch prod db to mysql
 - embed rickroll vid on hosted page
+- contact form
 - set up cap deployment
 - rick roll as error page
 - top rollers
 - top roll'd
+- slider for percentage
+- replace checkbox for date with check for presence of int in field
 
 
 IDEAS
-- frame version
+- frame version (time delayed)
+- proxy version (replaced text or plays bg music)
+- presets
+- forum/comments for bragging
 - alternate roll urls if video is removed
 - switch url of the month/week
 - interstitial
