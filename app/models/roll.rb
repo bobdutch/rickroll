@@ -21,7 +21,7 @@ class Roll < ActiveRecord::Base
   URL_REGEX = URI::regexp(['http','https'])
 
   belongs_to :user
-  has_many :hits
+  has_many :hits, :dependent => :destroy
 
   validates_format_of [:destination_url, :roll_url], :with => URL_REGEX
   validates_format_of :snip_url, :with => URL_REGEX, :allow_blank => true 
