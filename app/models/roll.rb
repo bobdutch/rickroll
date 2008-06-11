@@ -32,7 +32,7 @@ class Roll < ActiveRecord::Base
 
   protected
   def rolliness
-    if expires_at? or probability? or hits_until_expired?
+    if expires_at? or probability? or hits_until_expired? or expired?
       true
     else
       errors.add "this roll", "needs a sneaky way of turning into a rickroll"
