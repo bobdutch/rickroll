@@ -1,6 +1,21 @@
-%h2
+= javascript_include_tag :defaults
+
+%h1
+  Roll'd!
+%div
   Here is your shortened url
-  = link_to @roll.snip_url, @roll.snip_url
+  %br
+  %input#url_preview{:class=>'url_preview',:value => @roll.snip_url}
+  %a.clipboard{:href=>'javascript:void(0)',:onclick=>'copy($("url_preview"))',:title=>'Copy to clipboard.'}
+    Copy to clipboard
+  %br
+  %input#url_preview_html{:class=>'url_preview',:value => '<a href="'+@roll.snip_url+'">'+@roll.snip_url+'</a>'}
+  %a.clipboard{:href=>'javascript:void(0)',:onclick=>'copy($("url_preview_html"))',:title=>'Copy to clipboard.'}
+    Copy to clipboard
+  %br
+  %input#url_preview_bbcode{:class=>'url_preview',:value => '[url='+@roll.snip_url+']'+@roll.snip_url+'[/url]'}
+  %a.clipboard{:href=>'javascript:void(0)',:onclick=>'copy($("url_preview_bbcode"))',:title=>'Copy to clipboard.'}
+    Copy to clipboard
 .destination
   the destination is
   = link_to @roll.destination_url, @roll.destination_url

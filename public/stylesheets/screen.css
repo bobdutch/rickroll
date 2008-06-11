@@ -1,8 +1,62 @@
-.clearfix:after{clear:both;
-content:'.';
-display:block;
-visibility:hidden;
-height:0}
+/* @override http://localhost:3002/stylesheets/screen.css?1213069745 */
+
+.clearfix:after{clear:both;content:'.';display:block;visibility:hidden;height:0}
 .clearfix{display:inline-block}
 * html .clearfix{height:1%}
 .clearfix{display:block}
+
+body{
+	background: #fff url(/images/bg/main_body_bg.gif) no-repeat center top}
+
+h1{
+	font-size: 32px;
+	margin-bottom: 0;
+	text-shadow: #bfbfbf 2px 2px 2px}
+
+h2{
+	font-size: 14px;
+	margin-bottom: 10px;
+	font-weight: normal;
+	
+}
+
+form{
+	margin-top: 20px;
+}
+fieldset legend{
+	font-weight: bold;
+}
+.fieldDefault{	
+	color: #ccc;
+	background: #ebf1fb
+}
+#roll_destination_url{
+	padding: 3px;
+	font-size: 16px;
+	width: 394px;
+	-webkit-border-radius:12px;
+	-moz-border-radius:12px;
+}
+.url_preview{
+	float: left;
+	clear: left;
+	width: 200px
+}
+.clipboard{
+	background: url(/images/icon/clipboard_copy.gif) no-repeat center center;
+	width: 20px;
+	height:20px;
+	display: block;
+	float: left;
+	text-indent: -9999px;
+}
+#container{
+	width: 400px;
+	margin: 10px auto;
+}
+.destination{
+	clear: left;
+}
+#container form{
+	font-size: 14px
+}

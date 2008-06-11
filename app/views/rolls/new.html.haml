@@ -1,3 +1,5 @@
+= javascript_include_tag :defaults
+
 %h1 Welcome to RickRoll.tv
 %h2 the bait and switch URL shortening service
 - if flash[:notice]
@@ -5,11 +7,11 @@
     = flash[:notice]
 - form_for :roll, :url => { :action => :create } do |form|
   = error_messages_for :roll
-  .destination
-    %span Make
-    = form.text_field :destination_url
-  .rolling
-    %span go to
+  %fieldset.destination
+    %legend The Bait URL
+    = form.text_field :destination_url,:class=>'fieldDefault', :value=>'http://example.org', :onclick=>'clear_default_value(this,"http://example.org");', :onblur=>'reset_default_value(this,"http://example.org")'
+  %fieldset.rolling
+    %legend The Switch URL
     .classic
       the
       = radio_button_tag 'which_roll', 'classic', true
@@ -20,7 +22,7 @@
       = radio_button_tag 'which_roll', 'custom'
       %label Your Choice
       =form.text_field :roll_url
-  .when-to-roll
+  %fieldset.when-to-roll
     %strong 
     .hits 
       %span after
