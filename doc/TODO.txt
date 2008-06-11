@@ -9,6 +9,7 @@ FEATURES (approved)
 - add link text field
 - switch prod db to mysql
 - embed rickroll vid on hosted page
+- set up cap deployment
 - rick roll as error page
 - top rollers
 - top roll'd
@@ -20,4 +21,6 @@ IDEAS
 - switch url of the month/week
 - interstitial
 - ads
-- rick facts, 
+- rick facts
+- use passenger instead of fastcgi
+- rickroll if they try to roll rickroll.tv (easter egg)
