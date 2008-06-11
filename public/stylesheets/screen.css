@@ -40,15 +40,21 @@ fieldset legend{
 .url_preview{
 	float: left;
 	clear: left;
-	width: 200px
+	width: 200px;
 }
 .clipboard{
 	background: url(/images/icon/clipboard_copy.gif) no-repeat center center;
 	width: 20px;
 	height:20px;
-	display: block;
+	display: inline;
 	float: left;
 	text-indent: -9999px;
+}
+.note{
+	clear: left;
+	font-style: italic;
+	font-size: 0.8em;
+	color: #679e35;
 }
 #container{
 	width: 400px;
@@ -56,6 +62,7 @@ fieldset legend{
 }
 .destination{
 	clear: left;
+	margin-top: 10px;
 }
 #container form{
 	font-size: 14px
