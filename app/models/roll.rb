@@ -18,7 +18,7 @@
 
 class Roll < ActiveRecord::Base
   RICK_ROLL_URL = "http://www.youtube.com/watch?v=eBGIQ7ZuuiU"
-  URL_REGEX = URI::regexp(['http','https'])
+  URL_REGEX = URI::regexp(['http','https','ftp'])
 
   belongs_to :user
   has_many :hits, :dependent => :destroy
