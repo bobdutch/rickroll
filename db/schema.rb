@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "hits", :force => true do |t|
     t.string   "referrer"
@@ -19,18 +19,22 @@ ActiveRecord::Schema.define(:version => 3) do
     t.datetime "updated_at"
   end
 
+  add_index "hits", ["roll_id", "referrer"], :name => "index_hits_on_roll_id_and_referrer", :unique => true
+
   create_table "rolls", :force => true do |t|
-    t.string   "destination_url"
+    t.string   "destination_url",    :limit => 2083
     t.string   "snip_url"
-    t.string   "roll_url"
+    t.string   "roll_url",           :limit => 2083
     t.integer  "probability"
     t.integer  "hits_until_expired"
     t.integer  "user_id"
     t.datetime "expires_at"
-    t.boolean  "expired",            :default => false, :null => false
+    t.boolean  "expired",                            :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "rolls", ["user_id"], :name => "index_rolls_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
