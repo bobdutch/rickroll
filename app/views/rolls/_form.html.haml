@@ -1,0 +1,40 @@
+- if flash[:notice]
+  #notice
+    = flash[:notice]
+- form_for :roll, :url => { :action => :create } do |form|
+  = error_messages_for :roll
+  %fieldset.destination
+    %legend The Bait URL
+    = form.text_field :destination_url,:class=>'fieldDefault', :value=>'http://example.org', :onclick=>'clear_default_value(this,"http://example.org");', :onblur=>'reset_default_value(this,"http://example.org")'
+  %fieldset.rolling
+    %legend The Switch URL
+    .classic
+      the
+      = radio_button_tag 'which_roll', 'classic', true
+      %label Classic Rick Roll
+      = link_to "(watch video)", classic_url
+    .custom
+      or 
+      = radio_button_tag 'which_roll', 'custom'
+      %label Your Choice
+      =form.text_field :roll_url
+  %fieldset.when-to-roll
+    %strong 
+    .hits 
+      %span after
+      =form.text_field :hits_until_expired, {:size => 4}
+      hits
+    .probability
+      %span and/or
+      =form.text_field :probability, { :size => 4 }
+      \% of the time
+    .date-expiry
+      and/or
+      = check_box_tag 'use_expiry_date'
+      = expire_date_num_select
+      = expire_date_period_select
+      %span from now, 
+      %em forever
+
+  = submit_tag
+

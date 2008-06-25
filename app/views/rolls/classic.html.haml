@@ -1,0 +1,17 @@
+%h1 You've been Rickrolled!
+
+
+%div
+  = %{<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/fMzkMpMraFY&hl=en&autoplay=1"></param><embed src="http://www.youtube.com/v/fMzkMpMraFY&hl=en&autoplay=1" type="application/x-shockwave-flash" width="425" height="344"></embed></object>}
+
+
+%div
+  %h2 What is a rickroll?
+  %p Rickrolling is a prank and Internet meme involving the music video for the 1987 Rick Astley song "Never Gonna Give You Up". The meme is a bait and switch: a person provides a Web link they claim is relevant to the topic at hand, but the link actually takes the user to the Astley video. The URL can be masked or obfuscated in some manner so that the user cannot determine the true source of the link without clicking (and thus satisfying their curiosity). The second a person clicks on the link given and are led to the web page, they are said to have been "Rickrolled".
+  %p 
+    Read more at
+    %a{:href=>"http://wikipedia.com/rickroll"} Wikipedia
+
+%div
+  %h2 Get them back!
+  = render :partial => "form"

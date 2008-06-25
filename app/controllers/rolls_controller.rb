@@ -8,7 +8,7 @@ class RollsController < ApplicationController
   def create
     @roll = Roll.new(params[:roll]) do |roll|
       if params[:which_roll] == 'classic'
-        roll.roll_url = Roll::RICK_ROLL_URL
+        roll.roll_url = classic_url
       end
 
       if params[:use_expiry_date] && (params[:expire_date_num].to_i > 0) && VALID_EXPIRE_DATE_PERIODS.include?(params[:expire_date_period])
@@ -51,6 +51,10 @@ class RollsController < ApplicationController
       @roll.expired = true if @roll.hits_until_expired == 0
       @roll.save
     end
+  end
+
+  # Inline rickroll
+  def classic
   end
 
   def preview
